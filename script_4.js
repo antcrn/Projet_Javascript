@@ -17,22 +17,21 @@ const entrepreneurs = [
     { first: 'Travis', last: 'Kalanick', year: 1976 },
     { first: 'Marc', last: 'Andreessen', year: 1971 },
     { first: 'Peter', last: 'Thiel', year: 1967 }
-  ];
+];
 
-function filterByYear(arr){
+function filterByYear(arr) {
     console.log('Filtre dans cette liste les entrepreneurs qui sont nés dans les années 70 ');
-    console.log("********************")
-    for(let index in arr) {
-        if (arr[index].year >=1970 && arr[index].year < 1980){
-        console.log(arr[index]);
-      }
+    for (let index in arr) {
+        if (arr[index].year >= 1970 && arr[index].year < 1980) {
+            console.log(arr[index]);
+        }
     }
 }
 
-function toArray(arr){
+function toArray(arr) {
     let listeEntrepreneur = []
-    for(let index in arr) {
-     listeEntrepreneur.push([arr[index].first,arr[index].last])
+    for (let index in arr) {
+        listeEntrepreneur.push([arr[index].first, arr[index].last])
     }
     console.log('Sors une array qui contient le prénom et le nom des entrepreneurs');
     console.log(listeEntrepreneur)
@@ -40,26 +39,21 @@ function toArray(arr){
 
 
 
-function yearOld(arr){
-   let yearNow = new Date().getFullYear();
+function yearOld(arr) {
+    let yearNow = new Date().getFullYear();
     console.log('Quel âge aurait chaque inventeur aujourd\'hui ?');
-    for(let index in arr) {
-     let ageEntrepreneur=yearNow-arr[index].year;
-     console.log(arr[index].first+" "+arr[index].last+": "+ageEntrepreneur+" ans")
+    for (let index in arr) {
+        let ageEntrepreneur = yearNow - arr[index].year;
+        console.log(arr[index].first + " " + arr[index].last + ": " + ageEntrepreneur + " ans")
     }
-   }
+}
 
-function orderByAlphabetic(arr){
+function orderByAlphabetic(arr) {
     console.log('Trie les entrepreneurs par ordre alphabétique du nom de famille.');
-   console.log(arr.sort((a, b) => a.last.localeCompare(b.last)));
+    console.log(arr.sort((a, b) => a.last.localeCompare(b.last)));
 }
 
 filterByYear(entrepreneurs);
 toArray(entrepreneurs);
 yearOld(entrepreneurs);
 orderByAlphabetic(entrepreneurs);
-
-//
-
-
-//Trie les entrepreneurs par ordre alphabétique du nom de famille.
